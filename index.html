@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="reset.css">
+    <title>FashionDriven</title>
+</head>
+<body>
+    <div class="barraSuperior"><img src="./FashionDriven/Logo.png" alt=""></div>
+    <div class="divMeio">
+        <div class="escolhasModelo">
+            <div class="divDeDentro">
+                <div class="detalhe modelo" >
+                    <div class="tituloDetalhe"><p>Escolha o modelo</p></div>
+                    <div class="rolo">
+                        <div class="divDoRolo"><div onclick="selecionar(this,'.modelo')" style="background-image:url('./FashionDriven/tshirt.png') ;" class="divCircular "></div><p>T-shirt</p></div>
+                        <div class="divDoRolo"><div onclick="selecionar(this,'.modelo')" style="background-image:url('./FashionDriven/Camiseta.png') ;" class="divCircular "></div><p>Camiseta</p></div>
+                        <div class="divDoRolo"><div onclick="selecionar(this,'.modelo')" style="background-image:url('./FashionDriven/Mangalonga.png') ;" class="divCircular"></div><p>Manga longa</p></div>
+                    </div>  
+                </div>
+                <div class="detalhe gola" >
+                    <div class="tituloDetalhe"><p>Escolha a gola</p></div>
+                    <div class="rolo">
+                        <div class="divDoRolo"><div onclick="selecionar(this,'.gola')" style="background-image:url('./FashionDriven/GolaV.png') ;" class="divCircular"></div><p>Gola V</p></div>
+                        <div class="divDoRolo"><div onclick="selecionar(this,'.gola')" style="background-image:url('./FashionDriven/GolaRedonda.png') ;" class="divCircular "></div><p>Gola Redonda</p></div>
+                        <div class="divDoRolo"><div onclick="selecionar(this,'.gola')" style="background-image:url('./FashionDriven/GolaPolo.png') ;" class="divCircular "></div><p>Gola Polo</p></div>
+                    </div>  
+                </div>
+                <div class="detalhe tecido" >
+                    <div class="tituloDetalhe"><p>Escolha o tecido</p></div>
+                    <div class="rolo">
+                        <div class="divDoRolo"><div onclick="selecionar(this,'.tecido')" style="background-image:url('./FashionDriven/Seda.png') ;" class="divCircular"></div><p>Seda</p></div>
+                        <div class="divDoRolo"><div onclick="selecionar(this,'.tecido')" style="background-image:url('./FashionDriven/Algodão.png') ;" class="divCircular "></div><p>Algodão</p></div>
+                        <div class="divDoRolo"><div onclick="selecionar(this,'.tecido')" style="background-image:url('./FashionDriven/Poliester.png') ;" class="divCircular "></div><p>Poliéster</p></div>
+                    </div>  
+                </div>
+                <div class="imagemReferencia">
+                    <p>Imagem de referência</p>
+                    <input placeholder="Insira o link" type="text">
+                    <button>Confirmar Pedido</button>
+                </div>
+            </div>
+        </div>
+        <div class="topModel"></div>
+    </div>
+    <div class="barraInferior">
+        <div class="roloServidor">
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
