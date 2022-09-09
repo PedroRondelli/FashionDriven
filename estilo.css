@@ -84,6 +84,7 @@ button{
     font-size: 20px;
     font-weight: 400;
     border: transparent;
+    cursor: pointer;
 
 }
 ::placeholder{
@@ -127,7 +128,7 @@ button{
 }
 .barraInferior{
     height: 25vh;
-    background-color: crimson;
+    /* background-color: crimson; */
     display: flex;
     align-items: center;
     justify-content:center ;
@@ -139,9 +140,13 @@ button{
 
 }
 .roloServidor{
-    background-color: bisque;
+    /* background-color: bisque; */
     width: 90%;
     height: 90%;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    
 }
 .bordaSelecao{
     border: 3px solid #404EED;
@@ -150,4 +155,27 @@ button{
 .botaoLiberado{
    background-color:  #404EED;
 }
-
+.encomenda{
+    height:90%;
+    width:7%;
+    /* background-color: black; */
+    display:flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    cursor: pointer;
+    
+}
+.peca{
+    height:80%;
+    width: 90%;
+    background-position:top;
+    background-repeat: no-repeat;
+    background-size:contain;
+    box-sizing: border-box;
+}
+.encomenda p{
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 400;
+}
