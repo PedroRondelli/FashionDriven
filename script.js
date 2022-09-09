@@ -14,10 +14,13 @@ function liberarBotao() {
     if(contador===3 && linkNaCaixa.value !== "" ){
         let botaoFinal = document.querySelector("button")
         botaoFinal.classList.add("botaoLiberado")
+        botaoFinal.disabled = false
     }
     else{
         let botaoFinal = document.querySelector("button")
+        botaoFinal.disabled = true
         botaoFinal.classList.remove("botaoLiberado")
+
     }
 }
 function perguntarNome(){
@@ -46,6 +49,31 @@ function atualizar(resposta){
         roloservidor.innerHTML = roloservidor.innerHTML + template
     } )
 }
+function clicou() {
+   let modelo = document.querySelector(".modelo .bordaSelecao").classList[1]
+   let gola = document.querySelector(".gola .bordaSelecao").classList[1]
+   let material = document.querySelector(".tecido .bordaSelecao").classList[1]
+   let valorInput= document.querySelector("input").value
+   
+    let objeto = {
+        "model": modelo,
+        "neck": gola,
+        "material": material,
+        "image": valorInput ,
+        "owner": nomeUsuário,
+        "author": nomeUsuário
+    }
+    console.log(objeto)
+    let promessaEncomenda = axios.post("https://mock-api.driven.com.br/api/v4/shirts-api/shirts",objeto)
+    promessaEncomenda.then(fazerRequisicao)
+    promessaEncomenda.catch(deuErro)
+    alert("Confirmando a encomenda")
+
+}
+function deuErro() {
+    alert("Ops, não conseguimos processar sua encomenda")
+}
+
 let nomeUsuário;
 
 perguntarNome()
