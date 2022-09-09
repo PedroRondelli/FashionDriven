@@ -41,11 +41,12 @@ function fazerRequisicao() {
    promessa.catch(fazerRequisicao)
 }
 function atualizar(resposta){
+    arrayDaVez = resposta.data
     let arrayResposta = resposta.data
     let roloservidor = document.querySelector(".roloServidor")
     roloservidor.innerHTML = ""
     arrayResposta.forEach(element =>{
-        let template = `<div class="encomenda"><div style="background-image:url('${element.image}') ;" class="peca"></div><p><strong>Criador:</strong> ${element.owner}</p></div>`
+        let template = `<div onclick="encomendaServidor(${element.id})" class="encomenda"><div style="background-image:url('${element.image}') ;" class="peca"></div><p><strong>Criador:</strong> ${element.owner}</p></div>`
         roloservidor.innerHTML = roloservidor.innerHTML + template
     } )
 }
@@ -73,8 +74,29 @@ function clicou() {
 function deuErro() {
     alert("Ops, não conseguimos processar sua encomenda")
 }
+function encomendaServidor(id) {
+    if(confirm("Deseja encomendar essa peça?")){
+        arrayDaVez.forEach(element =>{
+        
+        if(id === element.id){
+            let objeto = {
+                "model": element.model,
+                "neck": element.neck,
+                "material": element.material,
+                "image": element.image ,
+                "owner": element.owner,
+                "author":element.owner
+            }
+            let promessaEncomenda = axios.post("https://mock-api.driven.com.br/api/v4/shirts-api/shirts",objeto)
+            promessaEncomenda.then(fazerRequisicao)
+            promessaEncomenda.catch(deuErro)
+        }
 
+        } )
+    }       
+}
 let nomeUsuário;
+let arrayDaVez;
 
 perguntarNome()
 fazerRequisicao()
